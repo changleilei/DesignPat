@@ -13,6 +13,7 @@ public class StarbuzzCoffee {
                 + "$" + beverage.cost());
 
         Beverage beverage1 = new DarkRoast();
+        beverage1.setSize(Beverage.Size.TALL);
         beverage1 = new Mocha(beverage1);
         beverage1 = new Mocha(beverage1);
         beverage1 = new Whip(beverage1);

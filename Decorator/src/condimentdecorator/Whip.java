@@ -1,6 +1,7 @@
 package condimentdecorator;
 
 import beverage.Beverage;
+import com.sun.jndi.ldap.Ber;
 
 // 奶泡
 public class Whip extends CondimentDecorator {
@@ -18,6 +19,13 @@ public class Whip extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return 0.10 + beverage.cost();
+        double cost = beverage.cost();
+        if (getSize().equals(Size.TALL))
+            cost += .1;
+        else if (getSize().equals(Size.GRANDE))
+            cost += .2;
+        else if(getSize().equals(Size.VENTI))
+            cost += .3;
+        return cost;
     }
 }
